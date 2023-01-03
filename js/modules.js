@@ -1,4 +1,4 @@
-import navTab from './navTab.js';
+import NavTab from './navTab.js';
 import Accordion from './initAccordion.js';
 import ScrollSuave from './scrollSuave.js';
 import initModal from './modal.js';
@@ -17,7 +17,9 @@ scrollSuave.init();
 const accordion = new Accordion('.js-accordion dt');
 accordion.init();
 
-navTab();
+const navTab = new NavTab('.js-menutab li', '.js-menucontent section');
+navTab.init();
+
 initModal();
 initTooltip();
 initDropdownMenu();
