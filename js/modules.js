@@ -1,5 +1,5 @@
 import navTab from './navTab.js';
-import initAccordion from './initAccordion.js';
+import Accordion from './initAccordion.js';
 import ScrollSuave from './scrollSuave.js';
 import initModal from './modal.js';
 import initTooltip from './toolTip.js';
@@ -14,8 +14,10 @@ const options = { behavior: 'smooth', block: 'start' };
 const scrollSuave = new ScrollSuave('.js-menu a[href^="#"]', options);
 scrollSuave.init();
 
+const accordion = new Accordion('.js-accordion dt');
+accordion.init();
+
 navTab();
-initAccordion();
 initModal();
 initTooltip();
 initDropdownMenu();
