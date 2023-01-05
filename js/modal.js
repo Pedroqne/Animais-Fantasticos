@@ -20,8 +20,7 @@ export default class initModal {
   cliqueForaModal(event) {
     if (event.target === this.containerModal) {
       this.toggleModal(event);
-    };
-    
+    }
   }
 
   addModalEvents() {
