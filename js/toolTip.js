@@ -7,11 +7,13 @@ export default class Tooltip {
     this.onMouseOver = this.onMouseOver.bind(this);
   }
 
+  // move a tooltip com base na posição do mouse no mapa
   onMouseMove(event) {
     this.tooltipBox.style.top = event.pageY + 'px';
     this.tooltipBox.style.left = event.pageX - 200 + 'px';
   }
 
+  // remove os eventos e a tooltip
   onMouseLeave(event) {
     this.tooltipBox.remove();
     event.currentTarget.removeEventListener('mouseleave', this.onMouseLeave);
@@ -35,12 +37,14 @@ export default class Tooltip {
     currentTarget.addEventListener('mouseleave', this.onMouseLeave);
   }
 
+  // adiciona os eventos
   addTooltipsEvent() {
     this.tooltips.forEach((item) => {
       item.addEventListener('mouseover', this.onMouseOver);
     });
   }
 
+  // inicia
   init() {
     if (this.tooltips.length) {
       this.addTooltipsEvent();
