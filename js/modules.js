@@ -6,7 +6,7 @@ import Tooltip from './toolTip.js';
 import initDropdownMenu from './dropdown.js';
 import initMenuMobile from './menuMobile.js';
 import initAnimaScroll from './animaScroll.js';
-import initAnimaNumeros from './animaNumeros.js';
+import AnimaNumeros from './animaNumeros.js';
 import initFuncionamento from './funcionamento.js';
 
 const options = { behavior: 'smooth', block: 'start' };
@@ -26,8 +26,10 @@ modal.init();
 const tooltip = new Tooltip('[data-toolTip]');
 tooltip.init();
 
+const animaNumeros = new AnimaNumeros('[data-numero]', '.numeros', 'ativo');
+animaNumeros.init();
+
 initDropdownMenu();
 initMenuMobile();
 initAnimaScroll();
-initAnimaNumeros();
 initFuncionamento();
