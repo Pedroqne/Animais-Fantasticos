@@ -27,7 +27,6 @@ export default class AnimaNumeros {
   }
 
   animaNumero() {
-    console.log('teste');
     this.numeros.forEach((numero) => this.constructor.incrementarNumeros(numero));
   }
 

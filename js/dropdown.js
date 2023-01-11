@@ -1,7 +1,11 @@
-export default function initDropdownMenu() {
-  const dropdonwMenus = document.querySelectorAll('[data-dropdown]');
+export default class DropdownMenu {
+  constructor(menu) {
+    this.dropdonwMenus = document.querySelectorAll(menu);
 
-  function handleClick(event) {
+    this.dropdonwMenus = this.dropdonwMenus.bind(this);
+  }
+ 
+  handleClick(event) {
     event.preventDefault();
     this.classList.add('ativo');
     outsideClick(this, () => {
@@ -9,13 +13,12 @@ export default function initDropdownMenu() {
     });
   }
 
-  dropdonwMenus.forEach((menu) => {
-    ['click', 'touchstart'].forEach((userEvent) => {
-      menu.addEventListener(userEvent, handleClick);
-    });
-  });
+  addEventsMenu() {
+        menu.addEventListener('touchstart', this.handleClick);
+        menu.addEventListener('click', this.handleClick);
+      }
 
-  function outsideClick(element, callback) {
+  outsideClick(element, callback) {
     const html = document.documentElement;
     const outside = 'data-outside';
 
@@ -32,6 +35,12 @@ export default function initDropdownMenu() {
         html.removeEventListener('touchstart', handleOutsideClick);
         callback();
       }
+    }
+    init() {
+      if (this.dropdonwMenus.length) {
+        this.addEventsMenu();
+      }
+      return this
     }
   }
 }
