@@ -3,9 +3,9 @@ import Accordion from './initAccordion.js';
 import ScrollSuave from './scrollSuave.js';
 import Modal from './modal.js';
 import Tooltip from './toolTip.js';
-import initDropdownMenu from './dropdown.js';
+//import DropdownMenu from './dropdown.js';
 import initMenuMobile from './menuMobile.js';
-import initAnimaScroll from './animaScroll.js';
+import AnimaScroll from './animaScroll.js';
 import AnimaNumeros from './animaNumeros.js';
 import initFuncionamento from './funcionamento.js';
 
@@ -29,7 +29,8 @@ tooltip.init();
 const animaNumeros = new AnimaNumeros('[data-numero]', '.numeros', 'ativo');
 animaNumeros.init();
 
-initDropdownMenu();
+const animaScroll = new AnimaScroll('.js-scroll');
+animaScroll.init();
+
 initMenuMobile();
-initAnimaScroll();
 initFuncionamento();
