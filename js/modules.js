@@ -6,7 +6,7 @@ import Tooltip from './toolTip.js';
 import DropdownMenu from './dropdown.js';
 import AnimaScroll from './animaScroll.js';
 import AnimaNumeros from './animaNumeros.js';
-import initFuncionamento from './funcionamento.js';
+import Funcionamento from './funcionamento.js';
 import MenuMobile from './menuMobile.js';
 
 const options = { behavior: 'smooth', block: 'start' };
@@ -38,4 +38,5 @@ dropdonwMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', 'menu');
 menuMobile.init();
 
-initFuncionamento();
+const funcionamento = new Funcionamento('[data-semana]');
+funcionamento.init();
