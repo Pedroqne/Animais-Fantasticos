@@ -3,11 +3,11 @@ import Accordion from './initAccordion.js';
 import ScrollSuave from './scrollSuave.js';
 import Modal from './modal.js';
 import Tooltip from './toolTip.js';
-//import DropdownMenu from './dropdown.js';
-import initMenuMobile from './menuMobile.js';
+import DropdownMenu from './dropdown.js';
 import AnimaScroll from './animaScroll.js';
 import AnimaNumeros from './animaNumeros.js';
 import initFuncionamento from './funcionamento.js';
+import MenuMobile from './menuMobile.js';
 
 const options = { behavior: 'smooth', block: 'start' };
 
@@ -32,5 +32,10 @@ animaNumeros.init();
 const animaScroll = new AnimaScroll('.js-scroll');
 animaScroll.init();
 
-initMenuMobile();
+const dropdonwMenu = new DropdownMenu('[data-dropdown]');
+dropdonwMenu.init();
+
+const menuMobile = new MenuMobile('[data-menu="button"]', 'menu');
+menuMobile.init();
+
 initFuncionamento();
